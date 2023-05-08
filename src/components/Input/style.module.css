@@ -1,0 +1,10 @@
+.password{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+.textInput{
+    display: flex;
+    flex-direction: column;
+    align-self:center;
+}
