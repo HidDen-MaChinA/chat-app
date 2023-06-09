@@ -2,9 +2,12 @@
     display: flex;
     flex-direction: column;
     align-self: center;
+    justify-self: center;
 }
 .textInput{
+    width:100%;
     display: flex;
     flex-direction: column;
     align-self:center;
+    justify-self: center;
 }

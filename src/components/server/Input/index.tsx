@@ -1,33 +1,32 @@
-import React, { MouseEventHandler } from "react";
+import React from "react";
 import style from "./style.module.css";
-import { GlobalStore } from "@/store";
 
 interface InputPropsType {
-  handleInput:(value:string)=>void,
-  label:string
+  label:string,
+  args:any
 }
 
 interface PasswordPropsType extends InputPropsType{
   type:string,
-  handleInputType:()=>void
+  handleInputType?:()=>void
 }
 
 export function InputText(props:InputPropsType):React.ReactElement{
-  const { handleInput, label } = props;
+  const { label , args } = props;
   return(
     <div className={style.textInput} >
         <label htmlFor="">{ label }</label>
-        <input type="text" onChange={(e)=>{ handleInput(e.target.value) }} />
+        <input type="text" {...args} />
     </div>
   );
 }
 
 export function InputPassword(props:PasswordPropsType):React.ReactElement{
-  const { handleInput, label , type ,handleInputType } = props;
+  const { label , type ,handleInputType , args} = props;
   return(
      <div className={style.password} >
         <label htmlFor="">{label}</label>
-        <input type={type} onChange={(e)=>{ handleInput(e.target.value) }}/>
+        <input type={type} {...args} />
         <button onClick={handleInputType}>see</button>
      </div>
   );

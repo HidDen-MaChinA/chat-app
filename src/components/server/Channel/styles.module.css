@@ -1,0 +1,66 @@
+.channel-grid-areas {
+    display: grid;
+    grid-template-areas:
+        "bar message"
+    ;
+    grid-template-columns: 20% auto;
+    height: 100vh;
+}
+
+.bar-area {
+    margin: 2px;
+    border: 1px solid black;
+    grid-area: bar;
+    height:50vh;
+    overflow: scroll;
+    border-radius: 10px;
+}
+
+.message-area {
+    grid-area: message;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 2px;
+    height:97vh;
+}
+
+.channel-swap {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 97%;
+    margin: 1%;
+}
+
+
+.channel-swap:hover {
+    background-color: rgb(1, 1, 1);
+    color: white;
+    transition-duration: 200ms;
+}
+
+.channel-swap :first-child {
+    margin: auto;
+    padding: 3px;
+}
+
+.channel-title {
+    width: 100%;
+    display: flex;
+    position: relative;
+    border-bottom: 4px double black;
+}
+
+.channel-title :first-child {
+    margin: auto;
+    font-size: 1.5em;
+}
+
+.users-message {
+    overflow: scroll;
+    height: 90vh;
+}
+
+.receiver{
+    
+}
