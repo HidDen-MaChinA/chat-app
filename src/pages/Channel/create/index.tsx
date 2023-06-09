@@ -46,9 +46,10 @@ export default function (): React.ReactElement {
                     <div className={styles.userList}>
                         {Members.length===0 ? <></>: 
                         <div className={styles.selected}>
-                            {Members.map((member)=>(
+                            {Members.map((member,i)=>(
                                 <button onClick={()=>{
-                                    
+                                    Members.splice(i,1)
+                                    setMembers([...Members]);
                                 }}>{member.name}</button>
                             ))}
                         </div>
