@@ -5,7 +5,15 @@ export type user = {
     email:string,
     password:string,
     bio:string,
-    name:string
+    name:string,
+    id?:number
+}
+
+export type putUserType = {
+    oldpassword:string,
+    bio:string,
+    name:string,
+    newPassword:string
 }
 
 export type userLogin = {
@@ -16,11 +24,7 @@ export type userLogin = {
 export type createChannelType={
     name:string;
     type:"private" | "public";
-    members:member[];
-}
-
-export type member={
-    id:number
+    members:number[];
 }
 
 
@@ -79,4 +83,12 @@ export async function getChannels(token:string){
 }
 export async function addMembersToChannel(){
 
+}
+
+export async function putUser(token:string,tochange:putUserType){
+    return axios.put("http://localhost:8080/channedolp",tochange,{
+        headers:{
+            authorization:`Bearer ${token}`   
+        },
+    })
 }

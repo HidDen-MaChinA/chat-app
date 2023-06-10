@@ -51,6 +51,8 @@ export default function (): React.ReactElement {
             <span>bio</span>
             <textarea id="" cols={40} rows={10} {...register("bio")}></textarea>
             <button onClick={handleSubmit}>submit</button>
+            <button onClick={()=>{route.push("/Login")}}>Login</button>
         </div>
+
     )
 }

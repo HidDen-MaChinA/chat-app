@@ -1,4 +1,21 @@
 .main_container{
     min-height:100vh;
     display: flex;
+    width:100%;
+    flex-direction: column;
+}
+.bio{
+    margin: auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width:20%;
+}
+.main_container button{
+    margin:10px;
+    margin-left: auto;
+    margin-right: auto;
+    width:20%;
 }

@@ -3,7 +3,7 @@ import Layout from "@/components/server/layout";
 import React, { useCallback, useEffect, useMemo, useState } from "react"
 import { useForm } from "react-hook-form";
 import styles from "./styles.module.css";
-import { createChannel , createChannelType ,user,getUsers,member} from "@/request";
+import { createChannel , createChannelType ,user,getUsers} from "@/request";
 import { Pending } from "@/components/client";
 
 export default function (): React.ReactElement {
@@ -12,9 +12,14 @@ export default function (): React.ReactElement {
     const [Members,setMembers] = useState<user[]>([]);
     const handleSubmit = () =>{
         const token = localStorage.getItem("chat_token");
-        if(token){
+        const toSend = (()=>{
+            return Members.map((user)=>(
+                user.id
+            ))
+        })()
+        if(token && toSend !== undefined){
             console.log(getValues())
-           createChannel(token,{...getValues()}).then((data)=>{
+           createChannel(token,{...getValues(),members:toSend}).then((data)=>{
                 console.log(data)
            }).catch((e)=>{
                 console.log(e)

@@ -1,18 +1,20 @@
 import React from "react";
+import styles from './styles.module.css'
 
 type propsType = {
     label:string;
-    rest:any
+    rest:any;
+    [args:string]:any
 }
 
 export function ProfileRow(props:propsType):React.ReactElement{
-    const { label , rest} = props
+    const { label , rest, ...other} = props
     return( 
-        <div>
+        <div className={styles.container}>
             <label htmlFor="">
                 {label}
             </label>    
-            <input type="text" {...rest}/>
+            <input type="text" {...rest} {...other}/>
         </div>
     )
 
